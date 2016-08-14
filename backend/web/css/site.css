@@ -1,5 +1,6 @@
 html,
 body {
+
     height: 100%;
 }
 
@@ -108,4 +109,7 @@ a.desc:after {
 
 .nav > li > form > button:hover {
     text-decoration: none;
+}
+.fc-content{
+    cursor: pointer;
 }

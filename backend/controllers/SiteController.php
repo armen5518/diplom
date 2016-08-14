@@ -1,11 +1,13 @@
 <?php
 namespace backend\controllers;
 
+use backend\models\RegisterAdminOrganization;
+use common\helpers\Helper;
+use common\models\Event;
+use common\models\LoginForm;
+use backend\models\RegisterOrganization;
 use Yii;
 use yii\web\Controller;
-use yii\filters\VerbFilter;
-use yii\filters\AccessControl;
-use common\models\LoginForm;
 
 /**
  * Site controller
@@ -55,7 +57,41 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        $models = new Event();
+        $models = $models->find()->all();
+        $events = [];
+        if(!empty($models)) {
+            foreach ($models as $model) {
+
+
+                $Event = new \yii2fullcalendar\models\Event();
+                $Event->id = $model->id;
+                $Event->title = $model->title;
+                $Event->start = $model->start;
+                $Event->description = $model->description;
+                $Event->allDay = $model->allDay;
+                $Event->start = $model->start;
+                $Event->end = $model->end;
+                $Event->ranges = $model->ranges;
+                $Event->dow = $model->dow;
+                $Event->url = Yii::$app->params['domain'].'/event/view?id='.$model->id;
+                $Event->className = $model->className;
+                $Event->editable = $model->editable;
+                $Event->startEditable = $model->startEditable;
+                $Event->durationEditable = $model->durationEditable;
+                $Event->source = $model->source;
+                $Event->color = $model->color;
+                $Event->backgroundColor = $model->backgroundColor;
+                $Event->borderColor = $model->borderColor;
+                $Event->textColor = $model->textColor;
+
+                $events[] = $Event;
+            }
+        }
+//        Helper::out($models);
+        return $this->render('index', [
+            'events' => $events
+        ]);
     }
 
     public function actionLogin()
@@ -79,9 +115,9 @@ class SiteController extends Controller
         Yii::$app->user->logout();
 
         return $this->goHome();
-    } 
-    
-    
+    }
+
+
     public function actionLogout1()
     {
         Yii::$app->user->logout();
@@ -90,7 +126,19 @@ class SiteController extends Controller
     }
 
 
-    
-    
-    
+    public function actionRegisterOrganization()
+    {
+        $model = new RegisterOrganization();
+        return $this->render('register-organization',[
+            'model' => $model
+        ]);
+    }
+
+    public function actionRegisterAdminOrganization()
+    {
+        $model = new RegisterAdminOrganization();
+        return $this->render('register-admin-organization',[
+            'model' => $model
+        ]);
+    }
 }

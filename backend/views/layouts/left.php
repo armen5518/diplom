@@ -30,20 +30,20 @@
             [
                 'options' => ['class' => 'sidebar-menu'],
                 'items' => [
-                    ['label' => 'Menu ', 'options' => ['class' => 'header']],
-                    ['label' => 'Patients', 'icon' => 'fa fa-ambulance', 'url' => ['/gii']],
-                    ['label' => 'Nurses', 'icon' => 'fa fa-medkit', 'url' => ['/gii']],
-                    ['label' => 'Colleagues', 'icon' => 'fa fa-stethoscope', 'url' => ['/gii']],
-                    ['label' => 'Medicine', 'icon' => 'fa fa-wheelchair', 'url' => ['/gii']],
-                    ['label' => 'Prescriptions', 'icon' => 'fa fa-medkit', 'url' => ['/gii']],
-                    ['label' => 'Manager Report', 'icon' => 'fa fa-user-md', 'url' => ['/debug']],
+                    ['label' => 'Menu ',  'options' => ['class' => 'header']],
+                    ['label' => 'Dashboard', 'active' =>true,'icon' => 'fa fa-ambulance', 'url' => ['/site']],
+                    ['label' => 'Inbox', 'icon' => 'fa fa-medkit', 'url' => ['/site']],
+                    ['label' => 'Patients', 'icon' => 'fa fa-stethoscope', 'url' => ['/site']],
+                    ['label' => 'Question', 'icon' => 'fa fa-wheelchair', 'url' => ['/site']],
+                    ['label' => 'Analytics', 'icon' => 'fa fa-medkit', 'url' => ['/site']],
+                    ['label' => 'Settings', 'icon' => 'fa fa-cog', 'url' => ['/debug']],
 //                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
                     [
                         'label' => 'Same tools',
                         'icon' => 'fa fa-share',
                         'url' => '#',
                         'items' => [
-                            ['label' => 'Gii', 'icon' => 'fa fa-file-code-o', 'url' => ['/gii'],],
+                            ['label' => 'Gii', 'icon' => 'fa fa-file-code-o', 'url' => ['/site'],],
                             ['label' => 'Debug', 'icon' => 'fa fa-dashboard', 'url' => ['/debug'],],
                             [
                                 'label' => 'Level One',
