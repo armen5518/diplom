@@ -1,3 +1,11 @@
+Install...
+-----------------------
+composer install
+composer update
+
+yii migrate    ...  yes 
+
+
 Yii 2 Advanced Project Template
 ===============================
 
