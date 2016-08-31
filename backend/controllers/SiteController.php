@@ -6,7 +6,10 @@ use common\helpers\Helper;
 use common\models\Event;
 use common\models\LoginForm;
 use backend\models\RegisterOrganization;
-use Yii;
+use backend\models\User;
+use yii;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 
 /**
@@ -94,9 +97,32 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionProfil()
+    {
+        
+        $model = new User();
+        $model = $model->findOne(Yii::$app->user->id);
+//        print_r(Yii::$app->user->id);
+
+        return $this->render('profil', [
+            'user' => $model,
+        ]);
+    }
+
+    public function actionMessage()
+    {
+
+        $model = new User();
+        $model = $model->findOne(Yii::$app->user->id);
+//        print_r(Yii::$app->user->id);
+
+        return $this->render('message', [
+            'user' => $model,
+        ]);
+    }
     public function actionLogin()
     {
-        if (!Yii::$app->user->isGuest) {
+        if (!yii::$app->user->isGuest) {
             return $this->goHome();
         }
 

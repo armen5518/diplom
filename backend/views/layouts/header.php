@@ -3,6 +3,7 @@ use yii\helpers\Html;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
+
 ?>
 
 <header class="main-header">
@@ -98,7 +99,7 @@ use yii\helpers\Html;
                                 </li>
                             </ul>
                         </li>
-                        <li class="footer"><a href="#">See All Messages</a></li>
+                        <li class="footer"><a href="<?=Yii::$app->params['domain']?>/site/message">See All Messages</a></li>
                     </ul>
                 </li>
                 <li class="dropdown notifications-menu">
@@ -176,7 +177,7 @@ use yii\helpers\Html;
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                <a href="<?=Yii::$app->params['domain']?>/site/profil" class="btn btn-default btn-flat">Profile</a>
 
                             </div>
                             <div class="pull-right">

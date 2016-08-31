@@ -1,18 +1,17 @@
 <?php
 namespace frontend\controllers;
 
-use common\helpers\Helper;
 use Yii;
-use yii\base\InvalidParamException;
-use yii\web\BadRequestHttpException;
-use yii\web\Controller;
-use yii\filters\VerbFilter;
-use yii\filters\AccessControl;
 use common\models\LoginForm;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use yii\base\InvalidParamException;
+use yii\web\BadRequestHttpException;
+use yii\web\Controller;
+use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * Site controller
@@ -73,11 +72,6 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-//        Yii::$app->cache->set('test',145);
-//        echo  Yii::$app->cache->get('test'); exit;
-
-       echo Yii::$app->test->Arm();
-        exit;
         return $this->render('index');
     }
 
@@ -88,8 +82,7 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
-        echo  Yii::$app->cache->get('test'); exit;
-        if (!Yii::$app->user->isGuest) {
+        if (!\Yii::$app->user->isGuest) {
             return $this->goHome();
         }
 
@@ -132,7 +125,6 @@ class SiteController extends Controller
 
             return $this->refresh();
         } else {
-//            require ('E:\xampp\htdocs\yii_new\frontend\views\site\contact.php');
             return $this->render('contact', [
                 'model' => $model,
             ]);
@@ -156,20 +148,11 @@ class SiteController extends Controller
      */
     public function actionSignup()
     {
-//       $k =  Yii::$app->security->generatePasswordHash('aaa');
-//        $g = Yii::$app->security->validatePassword('aaa', $k);
-//       $a =  Yii::$app->security->generateRandomString();
-//        var_dump($a);
-//        exit();
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post())) {
-
-            
             if ($user = $model->signup()) {
-//                Helper::out($user);
                 if (Yii::$app->getUser()->login($user)) {
                     return $this->goHome();
-              
                 }
             }
         }

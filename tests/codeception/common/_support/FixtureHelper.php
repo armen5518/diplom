@@ -31,7 +31,7 @@ class FixtureHelper extends Module
     }
 
     /**
-     * Method called before any suite tests run. Loads User fixture login user
+     * Method called before any suite tests run. Loads user fixture login user
      * to use in acceptance and functional tests.
      * @param array $settings
      */

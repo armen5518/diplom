@@ -32,38 +32,38 @@
                 'items' => [
                     ['label' => 'Menu ',  'options' => ['class' => 'header']],
                     ['label' => 'Dashboard', 'active' =>true,'icon' => 'fa fa-ambulance', 'url' => ['/site']],
-                    ['label' => 'Inbox', 'icon' => 'fa fa-medkit', 'url' => ['/site']],
-                    ['label' => 'Patients', 'icon' => 'fa fa-stethoscope', 'url' => ['/site']],
-                    ['label' => 'Question', 'icon' => 'fa fa-wheelchair', 'url' => ['/site']],
-                    ['label' => 'Analytics', 'icon' => 'fa fa-medkit', 'url' => ['/site']],
-                    ['label' => 'Settings', 'icon' => 'fa fa-cog', 'url' => ['/debug']],
+                    ['label' => 'Inbox', 'active' =>false,'icon' => 'fa fa-medkit', 'url' => ['/site']],
+                    ['label' => 'Patients', 'active' =>false,'icon' => 'fa fa-stethoscope', 'url' => ['/patients']],
+                    ['label' => 'Question','active' =>false, 'icon' => 'fa fa-wheelchair', 'url' => ['/site']],
+                    ['label' => 'Analytics','active' =>false, 'icon' => 'fa fa-medkit', 'url' => ['/site']],
+                    ['label' => 'Settings','active' =>false, 'icon' => 'fa fa-cog', 'url' => ['/debug']],
 //                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
-                    [
-                        'label' => 'Same tools',
-                        'icon' => 'fa fa-share',
-                        'url' => '#',
-                        'items' => [
-                            ['label' => 'Gii', 'icon' => 'fa fa-file-code-o', 'url' => ['/site'],],
-                            ['label' => 'Debug', 'icon' => 'fa fa-dashboard', 'url' => ['/debug'],],
-                            [
-                                'label' => 'Level One',
-                                'icon' => 'fa fa-circle-o',
-                                'url' => '#',
-                                'items' => [
-                                    ['label' => 'Level Two', 'icon' => 'fa fa-circle-o', 'url' => '#',],
-                                    [
-                                        'label' => 'Level Two',
-                                        'icon' => 'fa fa-circle-o',
-                                        'url' => '#',
-                                        'items' => [
-                                            ['label' => 'Level Three', 'icon' => 'fa fa-circle-o', 'url' => '#',],
-                                            ['label' => 'Level Three', 'icon' => 'fa fa-circle-o', 'url' => '#',],
-                                        ],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
+//                    [
+//                        'label' => 'Same tools',
+//                        'icon' => 'fa fa-share',
+//                        'url' => '#',
+//                        'items' => [
+//                            ['label' => 'Gii', 'icon' => 'fa fa-file-code-o', 'url' => ['/site'],],
+//                            ['label' => 'Debug', 'icon' => 'fa fa-dashboard', 'url' => ['/debug'],],
+//                            [
+//                                'label' => 'Level One',
+//                                'icon' => 'fa fa-circle-o',
+//                                'url' => '#',
+//                                'items' => [
+//                                    ['label' => 'Level Two', 'icon' => 'fa fa-circle-o', 'url' => '#',],
+//                                    [
+//                                        'label' => 'Level Two',
+//                                        'icon' => 'fa fa-circle-o',
+//                                        'url' => '#',
+//                                        'items' => [
+//                                            ['label' => 'Level Three', 'icon' => 'fa fa-circle-o', 'url' => '#',],
+//                                            ['label' => 'Level Three', 'icon' => 'fa fa-circle-o', 'url' => '#',],
+//                                        ],
+//                                    ],
+//                                ],
+//                            ],
+//                        ],
+//                    ],
                 ],
             ]
         ) ?>

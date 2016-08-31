@@ -4,6 +4,9 @@ use yii\helpers\Html;
 /* @var $this \yii\web\View */
 /* @var $content string */
 
+//if(!Yii::$app->user->isGuest){
+//    return Yii::$app->response->redirect(Yii::$app->params['domain'].'/site/login');
+//}
 
 if (Yii::$app->controller->action->id === 'login') { 
 /**

@@ -81,6 +81,7 @@ $this->title = 'Doctor Dashboard';
                 </h1>
                 <p>
                     <?= Html::a(Yii::t('app', 'Create Event'), ['event/create'], ['class' => 'btn btn-success']) ?>
+                    <?= Html::a(Yii::t('app', 'All Events'), ['/event'], ['class' => 'btn btn-success']) ?>
                 </p>
             <?php } ?>
 
