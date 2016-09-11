@@ -11,7 +11,7 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'modules' => [],
+ 
     'components' => [
         'user' => [
             'identityClass' => 'common\models\User',
@@ -37,9 +37,10 @@ return [
             // Disable r= routes
             'enablePrettyUrl' => true,
 
-          
+
         ],
-       
+
+
     ],
     'params' => $params,
 ];

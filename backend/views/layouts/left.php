@@ -32,7 +32,7 @@
                 'items' => [
                     ['label' => 'Menu ',  'options' => ['class' => 'header']],
                     ['label' => 'Dashboard', 'active' =>true,'icon' => 'fa fa-ambulance', 'url' => ['/site']],
-                    ['label' => 'Inbox', 'active' =>false,'icon' => 'fa fa-medkit', 'url' => ['/site']],
+                    ['label' => 'Inbox', 'active' =>false,'icon' => 'fa fa-medkit', 'url' => ['/site/message']],
                     ['label' => 'Patients', 'active' =>false,'icon' => 'fa fa-stethoscope', 'url' => ['/patients']],
                     ['label' => 'Question','active' =>false, 'icon' => 'fa fa-wheelchair', 'url' => ['/site']],
                     ['label' => 'Analytics','active' =>false, 'icon' => 'fa fa-medkit', 'url' => ['/site']],

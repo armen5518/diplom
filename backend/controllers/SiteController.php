@@ -20,37 +20,45 @@ class SiteController extends Controller
     /**
      * @inheritdoc
      */
-//    public function behaviors()
-//    {
-//        return [
-//            'access' => [
-//                'class' => AccessControl::className(),
-//                'rules' => [
-//                    [
-//                        'actions' => ['login', 'error'],
-//                        'allow' => true,
-//                    ],
-//                    [
-//                        'actions' => ['logout', 'index'],
-//                        'allow' => true,
-//                        'roles' => ['@'],
-//                    ],
-//                ],
-//            ],
-//            'verbs' => [
-//                'class' => VerbFilter::className(),
-//                'actions' => [
-//                    'logout' => ['post'],
-//                ],
-//            ],
-//        ];
-//    }
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['login', 'error'],
+                        'allow' => true,
+                    ],
+                    [
+                        'actions' => ['logout',
+                            'index',
+                            'profil',
+                            'register-admin-organization',
+                            'register-organization',
+                            'message',
+                            'gii',  
+                        ],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'logout' => ['post'],
+                ],
+            ],
+        ];
+    }
 
     /**
      * @inheritdoc
      */
     public function actions()
     {
+//        Yii::$app->response->redirect('/doc/backend/web/site/login');
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
@@ -99,7 +107,6 @@ class SiteController extends Controller
 
     public function actionProfil()
     {
-        
         $model = new User();
         $model = $model->findOne(Yii::$app->user->id);
 //        print_r(Yii::$app->user->id);
